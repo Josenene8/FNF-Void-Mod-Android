@@ -41,6 +41,8 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+		
+		SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
@@ -77,28 +79,15 @@ class Main extends Sprite
 			gameWidth = Math.ceil(stageWidth / zoom);
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
-
-		#if windows
-	//	initialState = Caching;
+		
+                SUtil.doTheCheck();
+		
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
-		#else
-		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
-		#end
 		addChild(game);
-		#if windows
-		DiscordClient.initialize();
 
-		Application.current.onExit.add (function (exitCode) {
-			DiscordClient.shutdown();
-		 });
-		 
-		#end
-
-	//	#if !mobile
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
 		toggleFPS(FlxG.save.data.fps);
-	//	#end
 	}
 
 	var game:FlxGame;
