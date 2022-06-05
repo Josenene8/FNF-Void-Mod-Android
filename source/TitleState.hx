@@ -33,7 +33,7 @@ import openfl.Assets;
 import Discord.DiscordClient;
 #end
 
-#if cpp
+#if sys
 import sys.thread.Thread;
 #end
 
@@ -70,7 +70,7 @@ class TitleState extends MusicBeatState
 			trace("Loaded " + openfl.Assets.getLibrary("default").assetsLoaded + " assets (DEFAULT)");
 		}
 		
-		#if windows
+	//	#if windows
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
 
@@ -78,7 +78,7 @@ class TitleState extends MusicBeatState
 
 		KadeEngineData.initSave();
 		
-		#end
+//		#end
 
 				
 		Highscore.load();
