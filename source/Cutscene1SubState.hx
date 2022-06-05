@@ -65,6 +65,10 @@ class Cutscene1SubState extends MusicBeatState
 		txt.screenCenter(X);
 		txt.alpha = 0.7;
 		add(txt);
+		
+		#if android
+		addVirtualPad(NONE, A);
+		#end
 
 		new FlxTimer().start(0.3, function(tmr:FlxTimer)
 		{
