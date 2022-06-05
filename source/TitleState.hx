@@ -70,7 +70,7 @@ class TitleState extends MusicBeatState
 			trace("Loaded " + openfl.Assets.getLibrary("default").assetsLoaded + " assets (DEFAULT)");
 		}
 		
-		#if !cpp
+		#if windows
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
 
