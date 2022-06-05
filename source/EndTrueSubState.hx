@@ -49,6 +49,10 @@ class EndTrueSubState extends MusicBeatState
 		txt.borderStyle = FlxTextBorderStyle.OUTLINE;
 		txt.screenCenter(X);
 		add(txt);
+		
+		#if android
+		addVirtualPad(NONE, A);
+		#end
 
 		new FlxTimer().start(3.4, function(tmr:FlxTimer)
 		{
